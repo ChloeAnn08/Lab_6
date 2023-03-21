@@ -1,31 +1,37 @@
-#8-Digit Encoder
+# Chloe Sawatzki
 
+
+# Function to prompt the user for their desired operation
 def menu():
 	print("Menu", "---------------", "1. Encode", 
-		  "2. Decode", "3.Quit", sep="\n")
+		  "2. Decode", "3. Quit", sep="\n")
 
+# Function to encode an 8-digit password
 def encoder(password):
-	new = ''
+	newpass = ''
 	for i in password:
-		new += str(int(i)+3)
-	return new
+		newpass += str(int(i)+3)
+	return newpass
 
+
+# The main function
 def main():
 	selection = 0
-	while selection != 3:
+	while selection != 3:  # Will continue the program until the user exits
 		menu()
+		print()
 		selection = int(input("Please enter an option: "))
 
+		# Asks for a user inputed password to then encode
 		if selection == 1:
 			password = input("Please enter your password to encode: ")
 			print("Your password has been encoded and stored!")
-			print(encoder(password))
+			encoded = encoder(password)
 
-		#elif selection == 2:
-			#decode(password)
+		elif selection == 2:
+			pass
 
-		elif selection == 3: 
-			break
+		print()
 
 
 if __name__ == "__main__":
