@@ -13,10 +13,16 @@ def encoder(password):
 		newpass += str(int(i)+3)
 	return newpass
 
+def decoder(password):
+	newpass = ''
+	for i in range(0,len(password)):
+		newpass += str(int(password[i])-3)
+	return newpass
 
 # The main function
 def main():
 	selection = 0
+	encoded = None # added so encoded exists outside of if statement
 	while selection != 3:  # Will continue the program until the user exits
 		menu()
 		print()
@@ -29,7 +35,7 @@ def main():
 			encoded = encoder(password)
 
 		elif selection == 2:
-			pass
+			print(f"The encoded password is {encoded}, and the original password is {decoder(encoded)}.")
 
 		print()
 
